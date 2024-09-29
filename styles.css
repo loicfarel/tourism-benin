@@ -80,34 +80,6 @@ html {
   margin-top: 2rem;
 }
 
-/* 
-
-.explore__more button {
-  border-radius: 10px;
-} */
-
-
-/* .section__nav {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.section__nav span {
-  padding: 0 7px;
-  font-size: 1.75rem;
-  color: var(--text-dark);
-  border: 1px solid var(--text-dark);
-  border-radius: 100%;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.section__nav span:hover {
-  color: var(--white);
-  background-color: var(--primary-color);
-  border-color: var(--primary-color);
-} */
 
 .btn {
   padding: 0.75rem 1.5rem;
@@ -285,7 +257,7 @@ nav {
 
 .history__description p {
   color: var(--text-dark);
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 500;
   text-align: justify;
 }
