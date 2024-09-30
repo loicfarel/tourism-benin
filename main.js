@@ -23,11 +23,18 @@ window.addEventListener("scroll", function () {
 });
 
 // Header responsive
+const links = document.querySelectorAll(".link");
 const buttonMenu = document.getElementById("button-menu");
 const menu = document.querySelector(".nav__links");
 
 buttonMenu.addEventListener("click", () => {
   menu.classList.toggle("show__menu");
+});
+
+links.forEach((link) => {
+  link.addEventListener("click", function () {
+    menu.classList.remove("show__menu");
+  });
 });
 
 // Reveal option
