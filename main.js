@@ -1,14 +1,36 @@
+// Scroll effect
 const button = document.getElementById("button-top");
+const nav = document.getElementById("nav");
+let lastScrollTop = 0;
 
 window.addEventListener("scroll", function () {
-  const scrollPosition = window.scrollY;
-  if (scrollPosition > 300) {
+  const scrollTop = window.scrollY || document.documentElement.scrollTop;
+  if (scrollTop > 300) {
+    nav.classList.add("show__nav-bg");
     button.classList.add("active");
   } else {
+    nav.classList.remove("show__nav-bg");
     button.classList.remove("active");
   }
+
+  if (scrollTop > lastScrollTop) {
+    nav.classList.add("hidden");
+  } else {
+    nav.classList.remove("hidden");
+  }
+
+  lastScrollTop = scrollTop;
 });
 
+// Header responsive
+const buttonMenu = document.getElementById("button-menu");
+const menu = document.querySelector(".nav__links");
+
+buttonMenu.addEventListener("click", () => {
+  menu.classList.toggle("show__menu");
+});
+
+// Reveal option
 const scrollRevealOption = {
   distance: "50px",
   origin: "bottom",

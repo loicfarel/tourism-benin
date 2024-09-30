@@ -62,7 +62,7 @@ html {
 .section__title {
   font-size: 4rem;
   font-weight: 600;
-  color: var(--primary-color);
+  color: var(--primary-color-dark);
 }
 
 .section__description {
@@ -165,13 +165,19 @@ body {
 }
 
 nav {
-  max-width: var(--max-width);
+  width: 100%;
+  /* max-width: var(--max-width); */
   margin: auto;
-  padding: 2rem 1rem;
+  padding: 1.3rem 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  transition: .3s;
 }
 
 .nav__logo a {
@@ -194,9 +200,10 @@ nav {
   color: var(--white);
 }
 
+/* 
 .link a:hover {
-  color: var(--primary-color);
-}
+  color: whitesmoke;
+} */
 
 .header__container {
   padding: 5rem 1rem 10rem;
@@ -225,6 +232,14 @@ nav {
   width: 100%;
   display: flex;
   justify-content: center;
+}
+
+.show__nav-bg {
+  background: var(--primary-color-dark);
+}
+
+.hidden {
+  top: -100px;
 }
 
 
@@ -256,7 +271,7 @@ nav {
 }
 
 .history__description p {
-  color: var(--text-dark);
+  color: var(--text-light);
   font-size: 16px;
   font-weight: 500;
   text-align: justify;
@@ -667,7 +682,7 @@ nav {
   color: var(--white);
   bottom: 0;
   right: 5px;
-  z-index: 50px;
+  z-index: 50;
   cursor: pointer;
   transition: .3s;
   opacity: 0;
@@ -675,6 +690,11 @@ nav {
 
 .button__top span i {
   font-size: 1.5rem;
+}
+
+.button__top b {
+  opacity: 0;
+  font-size: 1px;
 }
 
 .button__top.active {
@@ -693,6 +713,19 @@ nav {
 
 ::-webkit-scrollbar-thumb {
   background-color: var(--primary-color);
+}
+
+.button__menu {
+  display: none;
+  border: none;
+  height: 40px;
+  width: 40px;
+  background: none;
+  color: var(--white);
+}
+
+.button__menu span i {
+  font-size: 2rem;
 }
 
 
@@ -767,8 +800,47 @@ nav {
     text-align: center;
   }
 
+  .header__container {
+    margin-top: 30px;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem 1rem;
+    z-index: 999;
+  }
+
   .nav__links {
-    display: none;
+    position: absolute;
+    top: 50px;
+    right: -110%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    padding: 2rem;
+    gap: 1.5rem;
+    transition: .3s;
+  }
+
+  .nav__links li a {
+    color: var(--text-dark);
+  }
+
+  .button__menu {
+    display: block;
+  }
+
+  .button__menu span i {
+    font-size: 2rem;
+  }
+
+  .show__menu {
+    right: 0;
   }
 
   .meal__grid {
